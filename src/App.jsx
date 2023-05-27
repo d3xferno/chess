@@ -7,6 +7,7 @@ import { socket } from './utils/socket'
 import GameInit from './components/GameInit'
 
 function App() {
+  console.log('page loaded');
   const context = useContext(chessContext)
   const [show,setShow] = useState(false)
   const [turn,setTurn] = useState('W')
