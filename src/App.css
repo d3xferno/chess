@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    /* font-family: 'MedievalSharp', cursive; */
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #111;
+    width: 100%;
+}
+
+
+.board{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* flex-wrap: wrap-reverse; */
+    /* flex-direction: row-reverse; */
+    width: 40rem;
+    height: 40rem;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.board-rev{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40rem;
+    height: 40rem;
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+}
+
+
+.piece{
+    height: 5rem;
+    width: 5rem;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.piece img{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.piece-dark{
+    background-color: rgb(111,143,114);
+}
+
+.piece-light{
+    background-color: rgb(173,189,143);
+}
+
+.piece:hover{
+    background-color: rgb(62, 100, 67);
+}
+
+.selected{
+    background-color: rgb(62, 100, 67);
+}
+
+.hide{
+    display: none;
+}
+
+.overlap{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(35,220,61,0.5)
+}
+
+.choose{
+    background-color: white;
+    display: flex;
+    position: absolute;
+}
+
+.choose img{
+    padding: 1rem;
+}
+
+.choose img:hover{
+    cursor: pointer;
+    background-color: #E1D9D1;
+}
+
+.game-init{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.75);
+    border-radius: 5px;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.game-init h1{
+    font-size: 6rem;
+}
+
+.game-init button{
+    color: white;
+    padding: 10px;
+    font-size: 1.5rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(111,143,114);
+    font-family: 'Space Mono', monospace;
+}
+
+.game-init button:hover{
+    background-color: rgb(119, 157, 123);
+    transition: background-color 200ms ease-in-out;
+}
+
+.links{
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+}
+
+.app{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://images.pexels.com/photos/112854/pexels-photo-112854.jpeg?cs=srgb&dl=pexels-george-becker-112854.jpg&fm=jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-init span{
+    font-size: 10rem;
+}
+
+.links input{
+    padding: 0.75rem;
+    outline: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    font-family: 'Space Mono', monospace;
+    text-indent: 10px;
+}
