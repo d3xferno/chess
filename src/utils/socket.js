@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
 
-const URL = process.env.NODE_URL || 'http://localhost:3000'
+const URL = 'https://chess-server-92na.onrender.com'
 
 export const socket = io(URL,{
     withCredentials: true,
