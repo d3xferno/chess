@@ -1,14 +1,11 @@
 import './App.css'
 import Board from './components/Board'
 import Choose from './components/Choose'
-import { useContext,useEffect,useState } from 'react'
+import { useState } from 'react'
 import { chessContext } from './context/context'
-import { socket } from './utils/socket'
 import GameInit from './components/GameInit'
 
 function App() {
-  console.log('page loaded');
-  const context = useContext(chessContext)
   const [show,setShow] = useState(false)
   const [turn,setTurn] = useState('W')
   const [exchange,setExchange] = useState('W_PAWN')

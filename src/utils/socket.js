@@ -1,11 +1,7 @@
 import { io } from 'socket.io-client';
 
-const URL = 'https://chess-server-92na.onrender.com'
+const URL =process.env.BACKEND_URL || 'http://localhost:3000';
 
-export const socket = io(URL,{
-    extraHeaders: {
-        'Access-Control-Allow-Origin': "https://chess-kage-git-main-d3xferno.vercel.app/",
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Credentials': true,
-    },
-}).connect();
+export const socket = io(URL);
+
+// 'https://chess-server-92na.onrender.com'
