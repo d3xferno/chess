@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
 
-const URL =process.env.BACKEND_URL || 'http://localhost:3000';
+const URL = process.env.BACKEND_URL || 'https://chess-backend-4pyi.onrender.com';
 
 export const socket = io(URL);
 
