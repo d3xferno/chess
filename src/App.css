@@ -161,3 +161,18 @@
     font-family: 'Space Mono', monospace;
     text-indent: 10px;
 }
+
+@media screen and (min-width: 640px) {
+    .board,.board-rev{
+      width: 20rem;
+      height: 20rem;
+    }
+    .piece{
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+    .piece img{
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+  }
