@@ -30,6 +30,7 @@ export default function GameInit() {
   return (
     <div className='game-init'>
         <div className='links'>
+            <p>Generate a Room ID and join a Room to start playing</p>
             <button onClick={()=>{navigator.clipboard.writeText(generateRoomId());setCopy(true);}}>Generate Room ID</button>
             {copy && <p style={{textAlign:'center'}}>Copied</p>}
             <input type='text' value={rid} onChange={(e)=>{setRid(e.target.value)}} placeholder='Enter Room Code'/>
