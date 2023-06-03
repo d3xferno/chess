@@ -107,6 +107,7 @@
     border-radius: 5px;
     padding: 2rem;
     gap: 1rem;
+    text-align: center;
 }
 
 .game-init h1{
