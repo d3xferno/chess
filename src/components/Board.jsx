@@ -105,7 +105,6 @@ export default function Board(){
         tempBoard[move.to] = config[move.from]
         setConfig(tempBoard)
         socket.emit('change',JSON.stringify({rid,tempBoard}))
-        console.log(rid)
         // if(temp.length===1)setTurn(turn==='W'?'B':'W')
 
     }
@@ -132,10 +131,8 @@ export default function Board(){
           let data = JSON.parse(msg)
           if(data.piece[0]==='W'){
             setTurn('B')
-            console.log(data)
           }else {
             setTurn('W')
-            console.log(data)
           }
         })
         return ()=>{
@@ -164,8 +161,9 @@ export default function Board(){
             bs+=(score[arr[i].slice(1)]*cnt["B"+arr[i]])
             ws+=(score[arr[i].slice(1)]*cnt["W"+arr[i]])
         }
-        setBlackScore(bs)
-        setWhiteScore(ws)
+        setBlackScore(ws)
+        setWhiteScore(bs)
+        console.log(ws,bs)
       },[config])
 
     return(
