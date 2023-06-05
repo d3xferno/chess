@@ -162,7 +162,7 @@
     text-indent: 10px;
 }
 
-@media screen and (min-width: 540px) {
+@media screen and (max-width: 540px) {
     .board,.board-rev{
       width: 20rem;
       height: 20rem;
@@ -177,7 +177,7 @@
     }
 }
 
-@media screen and (max-width:720px){
+@media screen and (min-width:720px){
     .board,.board-rev{
         width: 30rem;
         height: 30rem;
@@ -191,3 +191,19 @@
         width: 1.875rem;
     }
 }
+
+@media screen and (min-width:1080px) {
+    .board,.board-rev{
+        width: 40rem;
+        height: 40rem;
+    }
+    .piece{
+        height: 5rem;
+        width: 5rem;
+    }
+    .piece img{
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+}
+
