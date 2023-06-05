@@ -151,11 +151,12 @@ export default function Board(){
         for(let i=0;i<squareNo.length;i++){
             cnt[config[squareNo[i]]]-=1;
         }
-        console.log(cnt)
         let arr = ["_QUEEN","_PAWN","_KNIGHT","_ROOK","_BISHOP","_KING"]
         for(let i=0;i<6;i++){
             setBlackScore(blackScore+(score[arr[i].slice(1)]*cnt["B"+arr[i]]))
             setWhiteScore(whiteScore+(score[arr[i].slice(1)]*cnt["W"+arr[i]]))
+            console.log(blackScore+(score[arr[i].slice(1)]*cnt["B"+arr[i]]))
+            console.log(whiteScore+(score[arr[i].slice(1)]*cnt["W"+arr[i]]))
         }
         socket.on('change-board',data => {setConfig(JSON.parse(data).tempBoard);console.log(JSON.parse(data).tempBoard);})
         return ()=>{
