@@ -162,7 +162,7 @@
     text-indent: 10px;
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (min-width: 540px) {
     .board,.board-rev{
       width: 20rem;
       height: 20rem;
@@ -175,7 +175,7 @@
         height: 1.25rem;
         width: 1.25rem;
     }
-  }
+}
 
 @media screen and (max-width:720px){
     .board,.board-rev{
