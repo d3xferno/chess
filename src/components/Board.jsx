@@ -164,8 +164,8 @@ export default function Board(){
             bs+=(score[arr[i].slice(1)]*cnt["B"+arr[i]])
             ws+=(score[arr[i].slice(1)]*cnt["W"+arr[i]])
         }
-        setBlackScore(blackScore+bs)
-        setWhiteScore(whiteScore+ws)
+        setBlackScore(bs)
+        setWhiteScore(ws)
       },[config])
 
     return(
