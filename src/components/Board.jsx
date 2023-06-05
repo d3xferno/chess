@@ -144,6 +144,13 @@ export default function Board(){
       },[socket,turn])
 
       useEffect(()=>{
+        socket.on('change-board',data => {setConfig(JSON.parse(data).tempBoard);console.log(JSON.parse(data).tempBoard);})
+        return ()=>{
+            socket.off('change-board')
+        }
+      },[socket,config])
+
+      useEffect(()=>{
         let cnt = {
             "B_QUEEN":1,"B_PAWN":8,"B_KNIGHT":2,"B_ROOK":2,"B_BISHOP":2,"B_KING":1,
             "W_QUEEN":1,"W_PAWN":8,"W_KNIGHT":2,"W_ROOK":2,"W_BISHOP":2,"W_KING":1,"":0,"B":0,"W":0
@@ -151,18 +158,15 @@ export default function Board(){
         for(let i=0;i<squareNo.length;i++){
             cnt[config[squareNo[i]]]-=1;
         }
+        let bs=0,ws=0
         let arr = ["_QUEEN","_PAWN","_KNIGHT","_ROOK","_BISHOP","_KING"]
         for(let i=0;i<6;i++){
-            setBlackScore(blackScore+(score[arr[i].slice(1)]*cnt["B"+arr[i]]))
-            setWhiteScore(whiteScore+(score[arr[i].slice(1)]*cnt["W"+arr[i]]))
-            console.log(blackScore+(score[arr[i].slice(1)]*cnt["B"+arr[i]]))
-            console.log(whiteScore+(score[arr[i].slice(1)]*cnt["W"+arr[i]]))
+            bs+=(score[arr[i].slice(1)]*cnt["B"+arr[i]])
+            ws+=(score[arr[i].slice(1)]*cnt["W"+arr[i]])
         }
-        socket.on('change-board',data => {setConfig(JSON.parse(data).tempBoard);console.log(JSON.parse(data).tempBoard);})
-        return ()=>{
-            socket.off('change-board')
-        }
-      },[socket,config])
+        setBlackScore(blackScore+bs)
+        setWhiteScore(whiteScore+ws)
+      },[config])
 
     return(
         <>
