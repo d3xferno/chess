@@ -123,12 +123,12 @@ export default function Board(){
             "W_QUEEN":1,"W_PAWN":8,"W_KNIGHT":2,"W_ROOK":2,"W_BISHOP":2,"W_KING":1,"":0,"B":0,"W":0
         }
         for(let i=0;i<squareNo.length;i++){
-            cnt[config[squareNo[i]]]-=1;
+            cnt[config[squareNo[i]]]--;
         }
         let arr = ["_QUEEN","_PAWN","_KNIGHT","_ROOK","_BISHOP","_KING"]
         for(let i=0;i<6;i++){
-            setBlackScore(blackScore+(score["B"+arr[i]]*cnt["B"+arr[i]]))
-            setWhiteScore(whiteScore+(score["W"+arr[i]]*cnt["W"+arr[i]]))
+            setBlackScore(blackScore+(score[arr[i].slice(1)]*cnt["B"+arr[i]]))
+            setWhiteScore(whiteScore+(score[arr[i].slice(1)]*cnt["W"+arr[i]]))
         }
     },[config])
 
