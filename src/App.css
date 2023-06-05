@@ -207,3 +207,23 @@
     }
 }
 
+.btn-game-menu{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.btn-game{
+    background-color: rgb(111,143,114);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-game:hover{
+    background-color: rgb(119, 157, 123);
+}

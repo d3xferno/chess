@@ -12,7 +12,19 @@ export default function Board(){
     const [move,setMove] = useState(null)
     const [cur,setCur] = useState(null)
     const [valid,setValid] = useState([])
+    const [whiteScore,setWhiteScore] = useState(0)
+    const [blackScore,setBlackScore] = useState(0)
+
     const {show,setShow,turn,setTurn,exchange,setExchange,rid} = useContext(chessContext)
+
+    const score = {
+        "QUEEN":9,
+        "KING":10,
+        "KNIGHT":3,
+        "ROOK":5,
+        "PAWN":1,
+        "BISHOP":3,
+    }
 
     let audio = new Audio("promote.mp3")
     function playSound(){
@@ -88,6 +100,11 @@ export default function Board(){
             setShow(true)
         }
         let tempBoard = {...config}
+        if(turn==='W'){
+            setWhiteScore(whiteScore+score[config[move.to].slice(2)])
+        }else if(turn==='B'){
+            setBlackScore(blackScore+score[config[move.to].slice(2)])
+        }
         tempBoard[move.from] = ''
         tempBoard[move.to] = config[move.from]
         setConfig(tempBoard)
@@ -139,6 +156,13 @@ export default function Board(){
 
     return(
         <>
+            <div className="btn-game-menu">
+                <button onClick={()=>window.location.reload()} className="btn-game">New Game</button>
+                <div style={{display:"flex",justifyContent:"space-between",gap:"20px",color:"white"}}>
+                    <p>Black:{blackScore}</p>
+                    <p>White:{whiteScore}</p>
+                </div>
+                </div>
             <div className={`board${turn==='B'?'-rev':''}`}>
                 {
                     pieces.map((piece,index)=>(
