@@ -24,6 +24,7 @@ export default function Board(){
         "ROOK":5,
         "PAWN":1,
         "BISHOP":3,
+        "":0
     }
 
     let audio = new Audio("promote.mp3")
